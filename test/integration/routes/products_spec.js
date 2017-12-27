@@ -2,8 +2,8 @@
 
 describe('Routes: Products', () => {
     const defaultProduct = {
-        name: 'Default Product',
-        description: 'A description for non product',
+        name: 'Default product',
+        description: 'product description',
         price: 100
     };
 
