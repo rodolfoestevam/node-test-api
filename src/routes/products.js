@@ -1,10 +1,14 @@
-import express from 'express'
+import express from 'express';
+
+
 const router = express.Router();
 
-app.get('/products', (req, res) => res.send(
+router.get('/', (req, res) => res.send(
     [{
         name: 'Default Product',
         description: 'A description for non product',
         price: 100
     }]
 ));
+
+export default router;
