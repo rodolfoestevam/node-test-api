@@ -1,6 +1,6 @@
 import ProductsController from '../../../src/controllers/products';
 import sinon from 'sinon';
-import Product from '../../../src/controllers/products';
+import Product from '../../../src/models/product';
 
 describe('Controllers: Products', () => {
     const defaultProduct = [{
@@ -36,7 +36,9 @@ describe('Controllers: Products', () => {
 
         response.status.withArgs(400).returns(response);
         Product.find = sinon.stub();
-        Product.find.withArgs({}).rejects({ message: 'Error' });
+        Product.find.withArgs({}).rejects({
+            message: 'Error'
+        });
 
         const productsController = new ProductsController(Product);
         return productsController.get(request, response)
